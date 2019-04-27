@@ -19,6 +19,7 @@ public class ListFilesUtil{
         File directory = new File(directoryName);
         //get all the files from a directory
         File[] fList = directory.listFiles();
+        assert fList != null;
         for (File file : fList){
             if (file.isFile()){
                 System.out.println(file.getName());
