@@ -50,6 +50,8 @@ public class ListFilesUtil2 {
      * @param directoryName to be listed
      */
     public void listFilesAndFilesSubDirectories(String directoryName) {
+
+
         File directory = new File(directoryName);
         //get all the files from a directory
         File[] fList = directory.listFiles();
@@ -58,12 +60,14 @@ public class ListFilesUtil2 {
 //            if (file.isFile())
 
 
+            // musi byc try i catch bo inaczej nie wyszukuje wszystkiego
             try {
                 if (file.isFile()) {
                     System.out.println(file.getAbsolutePath());
                     // dotad dziala
 
                 }
+
 
                 //
 
@@ -73,12 +77,14 @@ public class ListFilesUtil2 {
                 }
 
 
-            }
-            catch (NullPointerException e){
+
+            } catch (NullPointerException e) {
 //                continue;
+                e.printStackTrace();                // usunac
             }
 
         }
+
     }
 
     public static void main(String[] args) {
